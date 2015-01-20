@@ -19,7 +19,11 @@ from events import MarketEvent
 
 class DataMetaclass(metaclass=ABCMeta):
     @abstractmethod
-    def get_latest_data(self, symbol, quantity):
+    def get_latest_data(
+        self,
+        symbol,
+        quantity
+    ):
         raise NotImplementedError
 
     @abstractmethod
@@ -87,7 +91,10 @@ class HistoricCSVDataHandler(DataMetaclass):
                 method='pad'
             ).iterrows()
 
-    def new_data_generator(self, symbol):
+    def new_data_generator(
+        self,
+        symbol
+    ):
         for row in self.symbol_list[symbol]:
             yield tuple([
                 symbol,

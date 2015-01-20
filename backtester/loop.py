@@ -15,7 +15,7 @@ from .portfolio import Portfolio
 from .broker import ExecutionHandler
 
 #MODULE
-events = Queue()
+events = Queue.Queue()
 data = HistoricCSVDataHandler()
 strategy = BuyAndHoldStrategy()
 portfolio = Portfolio()

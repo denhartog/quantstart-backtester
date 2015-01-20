@@ -51,8 +51,7 @@ class FillEvent(AbstractEvent):
     def __init__(
         self,
         symbol,
-        timeindex,
-        exchange,
+        datestamp,
         quantity,
         direction,
         fill_cost,
@@ -64,8 +63,7 @@ class FillEvent(AbstractEvent):
         commission: is $ per share
         """
         self.symbol = symbol
-        self.timeindex = timeindex
-        self.exchange = exchange
+        self.datestamp = datestamp
         self.quantity = quantity
         self.direction = direction
         self.fill_cost = fill_cost

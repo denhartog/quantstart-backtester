@@ -1,5 +1,8 @@
 #PYTHON
-from abc import ABCMeta, abstractmethod
+from abc import (
+    ABCMeta,
+    abstractmethod
+)
 
 #PROJECT
 from event import (
@@ -25,7 +28,10 @@ class BuyAndHoldStrategy(StrategyMetaclass):
     self.event_queue = event_queue
     self.bought = {symbol: False for symbol in self.symbol_list}
 
-    def calculate_signals(self, event):
+    def calculate_signals(
+        self,
+        event
+    ):
         if isinstance(event, MarketEvent):
             for symbol in self.symbol_list:
                 data = self.data.get_latest_data(symbol)[0]
