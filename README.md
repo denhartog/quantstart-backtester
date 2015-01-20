@@ -12,7 +12,7 @@ This repository is a **hand-written (no copying and pasting here, noob!)**, slig
 8. [Event-Driven Backtesting with Python - Part VIII](http://www.quantstart.com/articles/Event-Driven-Backtesting-with-Python-Part-VIII)
 
 ###Purpose
-I wanted to put together the code from the articles to better understand the event-based part of the code. The basic logic of the event-base is:
+I wanted to put together the code from the articles to better understand the event-based part of the code. The basic logic of `loop.py` is:
 
 1. `update_data()` puts a `MarketEvent()` into the queue
 2. `calculate_signals()` processes the `MarketEvent()` and puts a `SignalEvent()` into the queue
