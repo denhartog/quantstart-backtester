@@ -1,4 +1,4 @@
-#quantstart-event-driven-backtester
+#quantstart-backtester
 
 This repository is the **hand-written (no copying and pasting here, noob!)** completion of an ~~eight~~seven-part* article series written by [Michael Halls-Moore](http://www.quantstart.com/about-mike/), "the guy behind QuantStart.com":
 
