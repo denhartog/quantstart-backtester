@@ -17,22 +17,22 @@ class StrategyMetaclass(metaclass=ABCMeta):
 class BuyAndHoldStrategy(StrategyMetaclass):
     def __init__(
         self,
-        bars,
+        data,
         event_queue
     ):
-    self.bars = bars
-    self.symbol_list = self.bars.symbol_list
+    self.data = data
+    self.symbol_list = self.data.symbol_list
     self.event_queue = event_queue
     self.bought = {symbol: False for symbol in self.symbol_list}
 
     def calculate_signals(self, event):
         if isinstance(event, MarketEvent):
             for symbol in self.symbol_list:
-                bar = self.bars.get_latest_bars(symbol)[0]
-                if bars is not None and len(bars) > 0:
+                data = self.data.get_latest_data(symbol)[0]
+                if data is not None and len(data) > 0:
                     signal = SignalEvent(
                         symbol,
-                        bar[1],
+                        data[1],
                         'LONG'
                     )
                     self.event_queue.put(signal)
