@@ -37,16 +37,24 @@ class BacktestPortfolio(PortfolioMetaclass):
         self.current_holdings = self.calculate_current_holdings()
 
     def calculate_all_positions(self):
-        pass
+        positions = {symbol: 0 for symbol in self.symbol_list}
+        positions['datestamp'] = self.start_date
+        return positions
 
     def calculate_all_holdings(self):
-        pass
-
-    def calculate_all_holdings(self):
-        pass
+        holdings = {symbol: 0 for symbol in self.symbol_list}
+        holdings['datestamp'] = self.start_date
+        holdings['cash'] = self.initial_capital
+        holdings['commission'] = 0
+        holdings['total'] = self.initial_capital
+        return holdings
 
     def calculate_current_holdings(self):
-        pass
+        holdings = {symbol: 0 for symbol in self.symbol_list}
+        holdings['cash'] = self.initial_capital
+        holdings['commission'] = 0
+        holdings['total'] = self.initial_capital
+        return holdings
 
     def update_timeindex(self, event):
         pass

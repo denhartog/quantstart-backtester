@@ -15,7 +15,7 @@ from .portfolio import Portfolio
 from .broker import ExecutionHandler
 
 #MODULE
-events = Queue.Queue()
+event_queue = Queue.Queue()
 data = HistoricCSVDataHandler()
 strategy = BuyAndHoldStrategy()
 portfolio = Portfolio()
@@ -29,7 +29,7 @@ while True:
 
     while True:
         try:
-            event = events.get(block=False)
+            event = event_queue.get(block=False)
         except Queue.Empty:
             break
 
