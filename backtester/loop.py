@@ -9,21 +9,21 @@ from .events import (
     OrderEvent,
     FillEvent
 )
-from .data import DataHandler
+from .data import HistoricCSVDataHandler
 from .strategy import BuyAndHoldStrategy
 from .portfolio import Portfolio
 from .broker import ExecutionHandler
 
 #MODULE
 events = Queue()
-bars = DataHandler()
+data = HistoricCSVDataHandler()
 strategy = BuyAndHoldStrategy()
 portfolio = Portfolio()
 broker = ExecutionHandler()
 
 while True:
-    if bars.continue_backtest is True:
-        bars.update_bars()
+    if data.continue_backtest is True:
+        data.update_latest_data()
     else:
         break
 

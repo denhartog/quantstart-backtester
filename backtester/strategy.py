@@ -2,7 +2,7 @@
 from abc import ABCMeta, abstractmethod
 
 #PROJECT
-from events import (
+from event import (
     MarketEvent,
     SignalEvent
 )
@@ -18,11 +18,11 @@ class BuyAndHoldStrategy(StrategyMetaclass):
     def __init__(
         self,
         bars,
-        events
+        event_queue
     ):
     self.bars = bars
     self.symbol_list = self.bars.symbol_list
-    self.events = events
+    self.event_queue = event_queue
     self.bought = {symbol: False for symbol in self.symbol_list}
 
     def calculate_signals(self, event):
@@ -35,5 +35,5 @@ class BuyAndHoldStrategy(StrategyMetaclass):
                         bar[1],
                         'LONG'
                     )
-                    self.events.put(signal)
+                    self.event_queue.put(signal)
                     self.bought[symbol] = True

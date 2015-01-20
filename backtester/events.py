@@ -10,7 +10,7 @@ class SignalEvent(AbstractEvent):
     def __init__(
         self,
         symbol,
-        timestamp,
+        datestamp,
         signal_type
     ):
         """Initializes a SignalEvent
@@ -18,7 +18,7 @@ class SignalEvent(AbstractEvent):
         signal_type == 'LONG','SHORT'
         """
         self.symbol = symbol
-        self.timestamp = timestamp
+        self.datestamp = datestamp
         self.signal_type = signal_type
 
 
