@@ -27,4 +27,4 @@ I wanted to put together the code from the articles to better understand the eve
 2. It is important to note the aggregate of the code **as-is** from the series **does not work**. The code has missing logic and minor variable naming mismatches.
 3. I tried to keep my variable/method naming conventions **very** similar to their originals so one can more easily compare my code to the articles
 4. I took the liberty to make many minor logic changes (e.g. QuantStart's `Portfolio()` has `dict((k,v) for k, v in [(s, 0) for s in self.symbol_list]))` and I have `{symbol: 0 for symbol in self.symbol_list}`
-5. The QuantStart code is full of opportunities for DRY improvements, some of which I made and plenty more I left alone
+5. The QuantStart code is full of opportunities for DRY and encapsulation improvements, some of which I made and plenty more I left alone
